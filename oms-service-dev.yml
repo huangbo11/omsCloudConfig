@@ -1,0 +1,32 @@
+server:
+  port: 9080
+spring:
+  # 数据库配置信息
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/third-pay?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: 123456
+
+# 支付宝支付配置
+alipay:
+  app-id: 2021004138654602
+  private-key: MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCxEZCRXnxBIP9oxKgMsGyD0RMhhnDW71uB3QHJ8azp0B6zg7cNmSB4Jck2zdGwF8JLu9NiYT/Zzd2kFoUY4C4PcblUmBaWoZCBWdIzbO0r+P6WF+2zgMT2IxSUrqb2ORIsC/Sd+j536YHfI4qWmhqSMD6Q8vGSBfAR3GR+ShK6E5E3JpDOSePxgB3ksA22TJ9VgPyoHnwoIXON2qaX1YYTNDkM0/7fxQb5SZxukQHtNDN1KB+C1eqQb1fBXQCSuZJhHW5aVveGsXJOfGEqdScaRQSOdgwpb14Z39kYTTRlBO3oYrPAHueIkUGiXaDoZPuelKhLNoH/MsYm9YKePVINAgMBAAECggEBAJLM2yyKRz2/28DCegi7I9xNNC0xRtALdbQ+xMLmSNM4Jpvx8YumjlLOEPoMvXHe4MjlGaWQtt0eXkkyGnq7MbTANkS6KtALdsCm9SyJfEBemMNbZ0jQ03q1LtTtz6KHQleeOdnXpH7J61BSKQ4fCTR2JwkJQdosbhKAxBgn1UrKmJtBYECBxs9B4OFpwC0fDRKGwJmecYOH0MpNuVps436RH4w6h3i+s7yMkjnkfisk+B8Gmcgf6ssZQG9GwnXyF6urNk+MF3alH52WU7aBklSziFmaIMWQBbZriQJgOrJHACQZbfuK0WZe+dfVZVyelj/zO1V5jkeHZThbTJCOCgECgYEA4VHSTmJ3TiPr/cIwGP2GBaUWorTlWDsPeiPeZxouZtRfkE7XftjqyJBAKXca1HvMaH6hJFpG9acZ69RcARvCdClU/QaWKp6z+kkuBcQa8aUzzbG/oBJiEtoC6iT+ecRckd3v+lFPUM5q21I52/rPFBOd4yBdVDdrF9peyAkZCM0CgYEAyS3P/QUXPINsmp7uH93Sb1pJyfY+PgwanSQ5FfZMAAdo85Ml6p2wVikIeY+KCpQwxjRNZsvTfyeGzSR2lPEKS8oj0cxb1eR49WcGYGPjCgPbi1OL2LGgVkDw2Oj0fMfedy8RlvLkXzWhOuMbhLCnyRzgC3h0ICikgCLXcWmCbkECgYACR4igIGDimnxtscQ4zH/JmNT0ym2zic1rR+edFWe4xJc+531InDsr0kHD6Z+M3L/Bot5QdtVW8NzTRO+1VymNcUmZ0bI9NiPN+WWMy2IWZbxzbUPqA6WYWTpEUiF8696f3yXpW185Cw2LsHZDYnMr2dL0FES9cF4V/LCOx4DIVQKBgEhFG92CEanccIxPIa3y6uCzp6RUwGFbyce/tn4sP3sXLl2p88oHocwh63h31xgbyjW5nkCaYjzgfy18ttikipVVZW69ohQBgm5t9z1zRKFZZ2nytl8+2CGELMFPVlzpFALutrvqP53wTx4vbbhKGcxGgjm8qMLQtt+NJKYKSB/BAoGAUPr+q7JPHVgqDHVqOg2cJqkXqz9BxC+YefdluKdjswHy9uTzcWm8atN0N2NwyQsAOvQtFltMRNDJRVeLK8qGnCJzVta/eto28rlQusadpUIHLH1yP/HS02LWcWNMUUHm0cHE3Q8JvkHR4TCMxF19X2tu7+l2uDfuT2mJznBblAQ=
+  alipay-public-key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmjf806Q6hwyVJbGPCnv8PixfONruIeHzj+xl9b5YkyWpCkVWzPetG52sss7o6c7uyP5Agx1gstj4x23e80OtV2rzJcx/zg0yIqf77v5JiFyCGLgTul1xdPCjkMHNB6w56Fj0+Avv6L0nuyHReYx14MeCiVhgOz5ZHkG2VOfDywWiI/VlIsRozN0u26XkNku64x8qIOI8+CaIdcwZC1J8un8KqxK0b/7QWA/YslRaHJrbYbPqStUxBHYP3ZO7aL+37/Z8gqueyUeytYGGN+O7su2/cHlCttTpFKfI1E84oja0kfcn9VxClo9bcOer4UW8KZ8gWsktEnNEQWBVwx6DdQIDAQAB
+  server-url: https://openapi.alipay.com/gateway.do
+  charset: UTF-8
+  sign-type: RSA2
+  notify-url: http://127.0.0.1/alipay/notify
+
+# 微信支付配置
+wechat:
+  app-id: 28888
+  app-secret: xxxx
+  mch-id: 12222888
+  mch-key: your_wechat_api_key
+  api-v3-key: xxx
+  key-path: xxxxxxx
+  cert-serial-no: xxx
+  private-cert-path: xx
+  private-key-path: xx
+  notify-url: http://your_domain/wechat/notify
