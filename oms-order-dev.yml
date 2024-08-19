@@ -1,6 +1,3 @@
-server:
-  port: 9085
-
 spring:
   # 数据库配置信息
   datasource:
